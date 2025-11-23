@@ -287,6 +287,7 @@ main {
             <div class="controles-cor">
                 <button class="botao-cor botao-cor-anterior">&lt;&lt;</button>
                 <button class="botao-cor botao-cor-proximo">&gt;&gt;</button>
+                <link rel="stylesheet" href="img">
             </div>
         </section>
 
@@ -385,7 +386,6 @@ const robo = document.querySelector('.robo');
 const botaoAnterior = document.querySelector('.botao-cor-anterior');
 const botaoProximo = document.querySelector('.botao-cor-proximo');
 
-// Função para aplicar a cor ao Robotron
 function aplicarCor(indice) {
     robo.style.filter = cores[indice].filtro;
 }
