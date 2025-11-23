@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
+    <title>Robotron 2000</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500&display=swap" rel="stylesheet"> 
+
+<style>:root {
+    --main-cinza: #CCCCCC;
+    --main-branco: #FFFFFF;
+    --main-preto: #000000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../img/fundo.jpg);
+    background-position: center center;
+    background-size: cover cover;
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+}
+
+body, input {
+    font-family: 'Teko', sans-serif;
+}
+
+main {
+    width: 80vw;
+    height: 80vh;
+    margin: 10vh 8vw 10vh 12vw;
+    display: flex;
+    gap: 1vw;
+}
+
+.robotron {
+    background: url(../img/estrutura.png) no-repeat;
+    background-position: center center;
+    margin: 0;
+    flex-basis: 40%;
+    position: relative;
+}
+
+.robo {
+    height: 110%;
+    z-index: 1;
+    position: absolute;
+    left: -20%;
+    top: -5%;
+}
+
+.titulo {
+    transform: rotate(180deg);
+    font-weight: 500;
+    font-size: 130px;
+    position: absolute;
+    bottom: 7rem;
+    left: -3rem;
+    line-height: 0.8;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: rgba(255,255,255,0.8)
+}
+
+.controles-cor {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+    z-index: 2;
+}
+
+.botao-cor {
+    background: rgba(0,0,0,0.7);
+    border: 3px solid var(--main-cinza);
+    color: var(--main-branco);
+    font-size: 2em;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Teko', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.botao-cor:hover {
+    background: var(--main-cinza);
+    color: var(--main-preto);
+    transform: scale(1.1);
+}
+
+.botao-cor:active {
+    transform: scale(0.95);
+}
+
+.box {
+    background: rgba(0,0,0,0.6);
+    clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
+    border-left: 5px solid var(--main-cinza);
+    height: 80%;
+}
+
+/****************************** Equipamentos *****/
+
+.equipamentos {
+    flex-basis: 32%;
+}
+
+.montador {
+    height: 100%;;
+}
+
+.montador-conteudo {
+    padding: 2em 10%;
+}
+
+.peca {
+    padding: 1em 0;
+}
+
+.peca-titulo {
+    color: var(--main-branco);
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+.controle {
+    background: var(--main-preto);
+    border-radius: 25px;
+    float: right;
+    display: inline-flex;
+    padding: 5px;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.controle-contador {
+    width: 40px;
+    height: 35px;
+    background: none;
+    border: 0;
+    margin: 0 1rem;
+    color: var(--main-branco);
+    text-align: center;
+    font-size: 2.5em;
+    display: inline-flex;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.controle-ajuste {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 44px;
+    border-radius: 50%;
+    color: var(--main-cinza);
+    font-size: 4em;
+    background: var(--main-preto);
+    text-align: center;
+    border: 3px solid var(--main-cinza);
+    cursor: pointer;
+}
+
+.linha {
+    border-color: var(--main-cinza);
+}
+
+.producao {
+    margin-top: 1em;
+    font-size: 2em;
+    text-transform: uppercase;
+    padding: 0.2em 1em;
+    float: right;
+    border: 3px solid var(--main-branco);
+    background: var(--main-branco);
+    clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
+    cursor: pointer;
+}
+
+.producao:hover {
+    background: var(--main-preto);
+    color: var(--main-branco)
+}
+
+
+
+/****************************** Estatísticas *****/
+.estatisticas {
+    flex-basis: 23%;
+    padding: 2em 2em 0;
+}
+
+.estatistica {
+    color: var(--main-branco);
+    display: flex;
+    align-items: flex-start;
+    height: 25%;
+}
+
+.estatistica-titulo {
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--main-cinza);
+    flex-basis: 40%;
+    text-transform: uppercase;
+    order: 1
+}
+
+.estatistica-valor {
+    flex-basis: 60%;
+    position: relative;
+    margin: 10px 0 0;
+    order: 2;
+    margin: -10px 0 0;
+}
+
+.estatistica-valor::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    border: 1px solid var(--main-cinza);
+    border-radius: 50%;
+}
+
+.estatistica-numero {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-46%);
+    width: 100%;
+    line-height: 100%;
+    text-align: center;
+    font-size: 3em;
+    margin: 0;
+}
+
+.estatistica:nth-child(2n) .estatistica-titulo {
+    order: 2;
+    text-align: right;
+}
+
+.estatistica:nth-child(2n) .estatistica-valor {
+    order: 1;
+    flex-basis: 35%;
+    margin: 10px 0 0;
+}
+
+@media screen and (max-width: 1600px) {
+    body { 
+        font-size: 14px;
+    }
+    main {
+        width: 90vw;
+        height: 80vh;
+        margin: 5vh auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    body { 
+        font-size: 13px;
+    }
+
+    main {
+        width: 96vw;
+        height: 80vh;
+        margin: 10vh auto;
+    }
+}
+</style>
+</head>
+<body>
+    <main>
+        <section class="robotron">
+            <img class="robo" src="img/robotron.png" alt="Robotron">
+            <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
+            <div class="controles-cor">
+                <button class="botao-cor botao-cor-anterior">&lt;&lt;</button>
+                <button class="botao-cor botao-cor-proximo">&gt;&gt;</button>
+            </div>
+        </section>
+
+        <section class="box estatisticas">
+            <div class="estatistica">
+                <p class="estatistica-titulo">Força</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero">768</p>
+                </div>
+            </div>
+            <div class="estatistica">
+                <p class="estatistica-titulo">Poder</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero">630</p>
+                </div>
+            </div>
+            <div class="estatistica">
+                <p class="estatistica-titulo">Energia</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero">289</p>
+                </div>
+            </div>
+            <div class="estatistica">
+                <p class="estatistica-titulo">Velocidade</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero">597</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="equipamentos">
+            <form action="" class="montador">
+                <div class="box montador-conteudo">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Braços</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste">-</buttom>
+                            <input type="text" class="controle-contador" value="00">
+                            <buttom class="controle-ajuste">+</buttom>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Blindagem</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste">-</buttom>
+                            <input type="text" class="controle-contador" value="00">
+                            <buttom class="controle-ajuste">+</buttom>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Núcleos</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste">-</buttom>
+                            <input type="text" class="controle-contador" value="00">
+                            <buttom class="controle-ajuste">+</buttom>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Pernas</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste">-</buttom>
+                            <input type="text" class="controle-contador" value="00">
+                            <buttom class="controle-ajuste">+</buttom>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="" class="peca-titulo">Foguetes</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste">-</buttom>
+                            <input type="text" class="controle-contador" value="00">
+                            <buttom class="controle-ajuste">+</buttom>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Iniciar produção" class="producao" id="producao">
+            </form>
+        </section>
+    </main>
+
+    <script>
+
+const cores = [
+    { nome: 'Vermelho', classe: 'robo-vermelho', filtro: 'brightness(1) saturate(1)' },
+    { nome: 'Rosa', classe: 'robo-rosa', filtro: 'hue-rotate(320deg) saturate(1.2)' },
+    { nome: 'Preto', classe: 'robo-preto', filtro: 'brightness(0.7) saturate(0.5)' },
+    { nome: 'Azul', classe: 'robo-azul', filtro: 'hue-rotate(220deg) saturate(1.2)' },
+    { nome: 'Amarelo', classe: 'robo-amarelo', filtro: 'hue-rotate(40deg) saturate(1.3)' }
+];
+
+let indiceCorAtual = 0;
+const robo = document.querySelector('.robo');
+const botaoAnterior = document.querySelector('.botao-cor-anterior');
+const botaoProximo = document.querySelector('.botao-cor-proximo');
+
+// Função para aplicar a cor ao Robotron
+function aplicarCor(indice) {
+    robo.style.filter = cores[indice].filtro;
+}
+
+
+botaoAnterior.addEventListener('click', () => {
+    indiceCorAtual = (indiceCorAtual - 1 + cores.length) % cores.length;
+    aplicarCor(indiceCorAtual);
+});
+
+
+
+botaoProximo.addEventListener('click', () => {
+    indiceCorAtual = (indiceCorAtual + 1) % cores.length;
+    aplicarCor(indiceCorAtual);
+});
+
+
+aplicarCor(indiceCorAtual);
+    </script>
+</body>
+</html>

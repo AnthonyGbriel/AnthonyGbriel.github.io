@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+    <style> 
+        body{
+        height: 300px;
+        border: 2px, solid;
+        margin-top: 50px ;
+    }
+    
+    
+    #atividade{
+    font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+
+    #informacoes{
+        margin: 10px;
+        margin-top: 70px ;
+        margin-bottom: 50px ;
+        display: flex;
+    }
+    
+    
+    
+    #botao{
+        width: 90px;
+        height: 45px;
+        background-color: rgb(55, 0, 255);
+        color: white;
+
+    }
+    
+    .box{
+        display: flex;
+        width: 0 auto;
+        margin: 10px;
+    }
+    #nome_completo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        margin-right: 10px;
+    }
+    #nm{
+        
+        left: 10px;
+    }
+    #nomeComp{
+        height: 40px;
+        
+    }
+    #one{
+        flex: 2;
+        display: flex;
+    }
+    #nome_Sobrenome{
+        text-align: center;
+    }
+    #two{
+        flex: 1;
+    }
+    #tree{
+        flex: 0;
+    }
+    
+    </style>
+</head>
+
+<body>
+    <h1 id="atividade">Atividade 01</h1>
+
+    <div class="box">
+
+        <div id="one">
+            <label for="nome_Completo" id="nome_completo">nome <br> completo</label>
+            <input type="text" id="nomeComp">
+        </div>
+        <div id="two">
+            <button id="botao">>></button>
+        </div>
+        <div id="nome_Sobrenome">Nome <br> Sobrenome</div>
+        <div id="tree"> <input type="text" id="resultado1">
+             <input type="text" id="resultado2">
+        </div>
+
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    var nomeComp = document.getElementById('nomeComp');
+    var botao = document.getElementById('botao');
+    var resultado1 = document.getElementById('resultado1');
+    var resultado2 = document.getElementById('resultado2');
+
+    function separarNome() {
+        if (!nomeComp) return;
+        var texto = nomeComp.value;
+        if (!texto) {
+            if (resultado1) resultado1.value = '';
+            if (resultado2) resultado2.value = '';
+            return;
+        }
+        texto = texto.trim().replace(/\s+/g, ' ');
+
+        if (texto.indexOf(' ') === -1) {
+            if (resultado1) resultado1.value = texto;
+            if (resultado2) resultado2.value = '';
+            return;
+        }
+
+        var partes = texto.split(' ');
+        if (resultado1) resultado1.value = partes[0];
+        var sobrenomes = '';
+        for (var i = 1; i < partes.length; i++) {
+            if (i > 1) sobrenomes += ' ';
+            sobrenomes += partes[i];
+        }
+        if (resultado2) resultado2.value = sobrenomes;
+    }
+
+    if (botao) {
+        botao.addEventListener('click', function () {
+            separarNome();
+        });
+    }
+
+    if (nomeComp) {
+        nomeComp.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                separarNome();
+            }
+        });
+    }
+});
+
+    </script>
+</body>
+
+</html>

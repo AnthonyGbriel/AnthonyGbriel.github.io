@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+#todas-divs{
+    border: 2px solid black;
+    padding: 5%;
+    margin: 2%;
+    background-color: rgb(18, 17, 17);
+    color: white;
+    
+}
+#titulo{
+    color: rgb(117, 117, 223);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+#caixas-de-informacoes{
+    border: 2px solid blue;
+    padding: 5%;
+    margin: 2%;
+    box-shadow: -10px -15px 2px blue;
+}
+#informacoes-escritas{
+    height: auto;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+}
+#botao-de-calculo{
+    height: 60px;
+    margin: 20px;
+}
+#botao-de-calculo:active{
+    background-color: rgb(73, 173, 255);
+    color: aliceblue;
+
+}
+
+
+#nome-pessoal{
+    width: 80%;
+    max-width: 500px;
+    margin-left: 5px;
+}
+#peso{
+    margin-left: 14px;
+    width: 100px;
+}
+#altura{
+    width: 100px;
+    margin-left: 4px;
+}
+#resultado{
+    box-shadow: 1px 1px 10px 2px rgb(0, 72, 255);
+    width: 260px;
+    min-height: 80px;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: 20px;
+    display: block;
+    float: right;
+    padding: 8px;
+    resize: vertical;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+    </style>
+</head>
+<body>
+<div id="todas-divs">
+    
+    <div id="titulo">
+        <h1>Cálculo do IMC</h1>
+    </div>
+
+    <div id="caixas-de-informacoes">
+        <div id="informacoes">
+        Nome:<input type="text"  id="nome-pessoal" placeholder="Ex: Leonardo Fernandes "><br>
+        Peso:<input type="text"  id="peso" placeholder="Ex: 76"><br>
+        Altura:<input type="text" id="altura" placeholder="Ex: 1,84"><br>
+    </div>
+    <button id="botao-de-calculo">Calcular IMC</button>
+    <textarea id="resultado" rows="4" placeholder="Resultado."></textarea>
+</div>
+
+</div>
+
+</body>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('botao-de-calculo');
+  const resultadoEl = document.getElementById('resultado');
+
+  if (!btn || !resultadoEl) return;
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const pesoRaw = (document.getElementById('peso') || {}).value || '';
+    const alturaRaw = (document.getElementById('altura') || {}).value || '';
+    const nomeRaw = (document.getElementById('nome-pessoal') || {}).value || '';
+
+    if (!pesoRaw.trim() || !alturaRaw.trim()) {
+      resultadoEl.value = 'Preencha peso e altura';
+      return;
+    }
+
+    // aceitar vírgula ou ponto como separador decimal
+    const peso = parseFloat(pesoRaw.replace(',', '.'));
+    const altura = parseFloat(alturaRaw.replace(',', '.'));
+
+    if (isNaN(peso) || isNaN(altura) || altura <= 0) {
+      resultadoEl.value = 'Valores inválidos';
+      return;
+    }
+
+    const imc = peso / (altura * altura);
+    // formatar com vírgula como separador decimal
+    const imcStr = imc.toFixed(2).replace('.', ',');
+
+    // formatar nome: capitalizar cada palavra
+    const nome = nomeRaw.trim();
+    function capitalizar(n) {
+      return n
+        .toLowerCase()
+        .split(' ')
+        .filter(Boolean)
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
+    }
+    const nomeCap = nome ? capitalizar(nome) : '';
+
+    const mensagem = nomeCap
+      ? `Olá ${nomeCap}, o seu IMC é de ${imcStr}.`
+      : `O seu IMC é de ${imcStr}.`;
+
+    resultadoEl.value = mensagem;
+  });
+});
+</script>
+</html>
