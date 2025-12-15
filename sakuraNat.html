@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Sakura Nat - Restaurante Japonês</title>
+</head>
+<body>
+
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Sakura Nat</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menuNavbar">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Fale Conosco</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pedidos">Pedidos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#promocoes">Promoções</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--INÍCIO-->
+<section id="inicio" class="bg-light py-5">
+  <div class="container">
+    <h1 class="mb-3">Bem-vindo ao Sakura Nat</h1>
+    <p>
+      O Sakura Nat é um restaurante japonês que une tradição oriental e sofisticação moderna.
+      Nosso ambiente é tranquilo e elegante, ideal para momentos especiais.
+    </p>
+    <p>
+      Trabalhamos com ingredientes frescos e técnicas tradicionais para oferecer sushi,
+      sashimi e pratos quentes de alta qualidade.
+    </p>
+
+    <!-- CAROUSEL -->
+    <div id="carouselInicio" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/interior.jpg" class="d-block w-100" alt="Interior do restaurante">
+        </div>
+        <div class="carousel-item">
+          <img src="img/sushi.jpg" class="d-block w-100" alt="Sushi especial">
+        </div>
+        <div class="carousel-item">
+          <img src="img/exterior.jpg" class="d-block w-100" alt="Fachada do restaurante">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselInicio" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselInicio" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- HORÁRIOS -->
+    <h3 class="mt-5">Horário de Funcionamento</h3>
+    <table class="table table-bordered mt-3">
+      <tr><th>Dia</th><th>Horário</th></tr>
+      <tr><td>Segunda a Sexta</td><td>12h – 15h | 18h – 23h</td></tr>
+      <tr><td>Sábado</td><td>18h – 00h</td></tr>
+      <tr><td>Domingo</td><td>12h – 22h</td></tr>
+    </table>
+  </div>
+</section>
+
+<!--CARDÁPIO-->
+<section id="cardapio" class="py-5">
+  <div class="container">
+    <h2>Cardápio</h2>
+    <p>Nosso cardápio é inspirado na culinária japonesa tradicional.</p>
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#entradas">Entradas</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#principais">Pratos Principais</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#sobremesas">Sobremesas</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#bebidas">Bebidas</button></li>
+    </ul>
+
+    <div class="tab-content mt-4">
+      <div class="tab-pane fade show active" id="entradas">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5>Guioza <span class="badge bg-danger">Especial</span></h5>
+            <p>Pastéis japoneses recheados com carne suína e legumes.</p>
+            <strong>R$ 32,00</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="principais">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5>Combo Sushi Zen</h5>
+            <p>Seleção de sushis e sashimis variados.</p>
+            <strong>R$ 89,00</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="sobremesas">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5>Mochi</h5>
+            <p>Doce japonês de arroz recheado com anko.</p>
+            <strong>R$ 18,00</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="bebidas">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5>Sakê Tradicional</h5>
+            <p>Sakê japonês servido gelado ou quente.</p>
+            <strong>R$ 25,00</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SOBRE-->
+<section id="sobre" class="bg-light py-5">
+  <div class="container">
+    <h2>Sobre Nós</h2>
+    <h3 class="h5 mt-3">Nossa História</h3>
+    <p>
+      O Sakura Nat foi criado com o objetivo de apresentar a verdadeira experiência
+      gastronômica japonesa, respeitando a cultura e a tradição oriental.
+    </p>
+
+    <h3 class="h5 mt-3">Chef</h3>
+    <p>
+      Chef Kenji Nakamura, especialista em culinária japonesa com mais de 12 anos
+      de experiência.
+    </p>
+
+    <h3 class="h5 mt-3">Reconhecimentos</h3>
+    <ul class="list-group">
+      <li class="list-group-item">🏆 Destaque Oriental 2024</li>
+      <li class="list-group-item">⭐ Melhor Sushi da Região 2023</li>
+    </ul>
+  </div>
+</section>
+
+<!--RESERVAS-->
+<section id="reservas" class="py-5">
+  <div class="container">
+    <h2>Reservas</h2>
+    <form class="row g-3">
+      <div class="col-md-6"><input class="form-control" placeholder="Nome"></div>
+      <div class="col-md-6"><input class="form-control" placeholder="Telefone"></div>
+      <div class="col-md-4"><input type="date" class="form-control"></div>
+      <div class="col-md-4"><input type="time" class="form-control"></div>
+      <div class="col-md-4"><input type="number" class="form-control" placeholder="Pessoas"></div>
+      <div class="col-12"><button class="btn btn-dark">Reservar</button></div>
+    </form>
+
+    <div class="accordion mt-4" id="politicas">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#p1">
+            Política de Reservas
+          </button>
+        </h2>
+        <div id="p1" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            Reservas devem ser feitas com pelo menos 1 hora de antecedência.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--GALERIA-->
+<section id="galeria" class="bg-light py-5">
+  <div class="container">
+    <h2>Galeria</h2>
+    <div class="row g-3">
+      <div class="col-md-4"><img src="img/galeria1.jpg" class="img-fluid rounded"></div>
+      <div class="col-md-4"><img src="img/galeria2.jpg" class="img-fluid rounded"></div>
+      <div class="col-md-4"><img src="img/galeria3.jpg" class="img-fluid rounded"></div>
+    </div>
+
+    <h3 class="h5 mt-4">Avaliações</h3>
+    <div class="card">
+      <div class="card-body">⭐⭐⭐⭐⭐ — "Sushi impecável e atendimento excelente." — Carlos M.</div>
+    </div>
+  </div>
+</section>
+
+<!--CONTATO-->
+<section id="contato" class="py-5">
+  <div class="container">
+    <h2>Fale Conosco</h2>
+    <p>📍 Av. Sakura, 456 — Centro</p>
+    <p>📞 (11) 98888-8888 | ✉ contato@sakurazen.com</p>
+
+    <form>
+      <input class="form-control mb-2" placeholder="Nome">
+      <input class="form-control mb-2" placeholder="E-mail">
+      <textarea class="form-control mb-2" placeholder="Mensagem"></textarea>
+      <button class="btn btn-dark">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<!--PEDIDOS-->
+<section id="pedidos" class="bg-light py-5">
+  <div class="container">
+    <h2>Pedidos Online</h2>
+    <p>Pedidos via WhatsApp ou retirada no local.</p>
+    <ul class="list-group">
+      <li class="list-group-item">Centro — 30 min</li>
+      <li class="list-group-item">Zona Norte — 45 min</li>
+    </ul>
+  </div>
+</section>
+
+<!--PROMOÇÕES-->
+<section id="promocoes" class="py-5">
+  <div class="container">
+    <h2>Promoções</h2>
+    <div class="alert alert-warning">🍣 Quarta do Sushi — 15% OFF</div>
+    <p>Google ⭐ 4.9 | TripAdvisor ⭐ 5.0</p>
+  </div>
+</section>
+
+<footer class="bg-dark text-white text-center py-3">
+  <small>© 2025 Sakura Nat — Todos os direitos reservados.</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
