@@ -7,25 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Botões das Abas -->
+    <div id="abas-botoes">
+        <button class="btn-aba ativo" data-aba="aba1">Sobre</button>
+        <button class="btn-aba" data-aba="aba2">Contatos</button>
+        <button class="btn-aba" data-aba="aba3">Educação</button>
+        <button class="btn-aba" data-aba="aba4">Trabalhos</button>
+    </div>
     
     <!-- Primeira aba -->
-    <div id="caixa1">
+    <div id="caixa1" class="conteudo-aba ativo" data-aba="aba1">
         <div>
             <h1 id="ola">Olá</h1>
         </div>
+
             <div id="informacoes">
                 <div id="nome-idade">
                     <h1>Meu nome é:</h1>
                     <div id="nomes">
                         <span id="primeiro-nome">Anthony</span>
-                        <span id="nome-do-meio">Gabriel</span>
-                        <span id="sobrenome">Medeiros</span>
+                        <span id="nome-do-meio">Gabriel Leite</span>
+                        <span id="sobrenome">Medeiros da Costa</span>
                     </div>
-                    <p>da Costa</p>
                     <p>Idade: 17 anos</p>
                 </div>
                 <p id="slogan"> Transformando ideias em codigos e soluções criativas</p>
             </div>
+
+            <!-- Imagem perfil -->
             <div id="perfil">
                 <img src="Img/toro.jpg" alt="Toro">
                 <p>Nesse site mostro um pouco sobre minhas informações.</p>
@@ -33,7 +42,7 @@
         </div>
 
         <!-- Segunda aba   -->
-<div id="caixa2">
+<div id="caixa2" class="conteudo-aba" data-aba="aba2">
     <div id="ola">
         <h1>Seção de contatos</h1>
     </div>
@@ -45,7 +54,6 @@
         <h3>Github: AnthonyGbriel</h3>
         <h3>Telefone: (82)9969-4276</h3>
         <h3>instagram: Biel_mdrsz</h3>
-        <a href="" id="link-trabalhos">link para trabalhos escolares</a>
 
         <!-- Imagens das Logos  -->
         <div id="gmail-logo">
@@ -65,7 +73,7 @@
 
     <!-- Terceira aba -->
 
-    <div id="caixa3">
+    <div id="caixa3" class="conteudo-aba" data-aba="aba3">
         <div id="experiencias-titulo">
             <h2>Educação</h2> 
             <h2>Experiências</h2>
@@ -86,5 +94,31 @@
         </div>
     </div>
 
+    <div id="caixa4" class="conteudo-aba" data-aba="aba4">
+        <div id="trabalhos-titulo">
+            <h2>Meus Trabalhos</h2>
+        </div>
+        
+        <div id="trabalhos-conteudo">
+            <div class="trabalho-item">
+                <h3>Projeto 1</h3>
+                <p>Descrição do projeto</p>
+                <a href=".  " target="_blank">Ver mais</a>
+            </div>
+            <div class="trabalho-item">
+                <h3>Projeto 2</h3>
+                <p>Descrição do projeto</p>
+                <a href="." target="_blank">Ver mais</a>
+            </div>
+            <div class="trabalho-item">
+                <h3>Projeto 3</h3>
+                <p>Descrição do projeto</p>
+                <a href="." target="_blank">Ver mais</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Prompt.js"></script>
 </body>
 </html>

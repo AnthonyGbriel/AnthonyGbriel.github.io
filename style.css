@@ -2,6 +2,47 @@ body{
     color: white;
     background-color: black;
 }
+
+/* Estilos das Abas */
+#abas-botoes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-aba {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid rgb(116, 196, 237);
+    background-color: transparent;
+    color: rgb(116, 196, 237);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn-aba:hover {
+    background-color: rgb(116, 196, 237);
+    color: black;
+}
+
+.btn-aba.ativo {
+    background-color: rgb(116, 196, 237);
+    color: black;
+}
+
+.conteudo-aba {
+    display: none;
+}
+
+.conteudo-aba.ativo {
+    display: block;
+}
+
 #caixa1{
     height: 600px;
     background-image: url('Img/Descargar\ Fondo\ de\ onda\ de\ fluido\ púrpura\ abstracto\ gratis.jpg');
@@ -28,7 +69,7 @@ body{
     align-items: center;
 }  
 #informacoes{
-    width: 350px;
+    width: 400px;
     border-radius: 5px;
     position: absolute;
     left: 50px;
@@ -41,6 +82,8 @@ body{
 img {
     border-radius: 50%;
 }
+
+/* SEGUNDA CAIXA */
 
 #caixa2{
     height: 600px;
@@ -98,6 +141,8 @@ img {
     width: 100px;
 }
 
+/* TERCEIRA CAIXA */
+
 #caixa3{
     height: 600px;
     background-image:url(Img/Fundo-roxo-caixa3.jpg) ;
@@ -137,3 +182,97 @@ img {
  border: 3px solid black
  }
 
+#caixa4{
+    height: 600px;
+    background-color: rgb(78, 16, 135);
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 20px;
+}
+
+#trabalhos-titulo {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(51, 10, 128);
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#trabalhos-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    position: relative;
+    top: 20px;
+}
+
+.trabalho-item {
+    background-color: rgba(51, 10, 128, 0.9);
+    border: 2px solid rgb(116, 196, 237);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.trabalho-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(116, 196, 237, 0.4);
+    border-color: rgb(200, 230, 255);
+}
+
+.trabalho-item h3 {
+    color: rgb(116, 196, 237);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.trabalho-item p {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.trabalho-item a {
+    display: inline-block;
+    background-color: rgb(116, 196, 237);
+    color: black;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.trabalho-item a:hover {
+    background-color: rgb(200, 230, 255);
+    transform: scale(1.05);
+}
+
+
+ /* QUARTA CAIXA */
+
+ 
+#caixa3{
+    height: 600px;
+    background-image:url(Img/Fundo-roxo-caixa3.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+    
+}
