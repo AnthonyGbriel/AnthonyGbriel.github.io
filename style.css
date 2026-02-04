@@ -2,6 +2,19 @@ body{
     color: white;
     background-color: black;
 }
+h1{
+    background: linear-gradient( to left,
+    purple, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+h2{
+    
+    background: linear-gradient( to left,
+    purple, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /* Estilos das Abas */
 #abas-botoes {
