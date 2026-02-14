@@ -112,47 +112,28 @@ img {
 }
 #contatos-gerais{
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     align-items: center;
     position: relative;
-    top: 70px;
+    top: 40px;
     font-family:'Courier New', Courier, monospace;
 
 }
 
 /*  Parte de logos (imagens) */
-#gmail-logo{
-    position: relative;
-    left: 500px;
-    top: -100px;
+#contatos-logo{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
-#gmail-logo img {
+#contatos-logo div{
+    position: static;
+}
+#contatos-logo img{
     width: 100px;
-}
-#whatsapp-logo{
-    position: relative;
-    left: 500px;
-    top: -400px;
-}
-#whatsapp-logo img{
-    width:100px;
-}
-#github-logo{
-    position: relative;
-    right: 500px;
-    top: -325px;
-}
-#github-logo img{
-    width: 100px;
-}
-
-#instagram-logo{
-    position: relative;
-    right: 500px;
-    top: -600px;
-}
-#instagram-logo img {
-    width: 100px;
+    display: block;
 }
 
 /* TERCEIRA CAIXA */
