@@ -59,7 +59,7 @@ h2{
 
 #caixa1{
     height: 600px;
-    background-image: url('Img/Descargar\ Fondo\ de\ onda\ de\ fluido\ púrpura\ abstracto\ gratis.jpg');
+    background-image: url('Img/Descargar Fondo de onda de fluido púrpura abstracto gratis.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -140,14 +140,13 @@ img {
 
 #caixa3{
     height: 600px;
-    background-image:url(Img/Fundo-roxo-caixa3.jpg) ;
+    background-image:url(Img/Fundo\ roxo\ caixa3.jpg ) ;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
     position: relative;
     top: 20px;
-    
 }
 
 #experiencias-titulo {
@@ -177,6 +176,7 @@ img {
  border: 3px solid black
  }
 
+    /* *Caixa 04*/
 #caixa4{
     height: 600px;
     background-color: rgb(78, 16, 135);
@@ -254,17 +254,4 @@ img {
 .trabalho-item a:hover {
     background-color: rgb(200, 230, 255);
     transform: scale(1.05);
-}
-
- 
-#caixa3{
-    height: 600px;
-    background-image:url(Img/Fundo-roxo-caixa3.jpg) ;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 10px;
-    position: relative;
-    top: 20px;
-    
 }
