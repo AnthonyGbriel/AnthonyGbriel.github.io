@@ -1,6 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
+    margin: 0;
+    padding: 30px 20px 50px;
     color: white;
-    background-color: black;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(149, 76, 255, 0.42), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(58, 146, 255, 0.25), transparent 28%),
+        linear-gradient(135deg, #050816 0%, #130d23 35%, #090b14 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 h1{
     background: linear-gradient( to left,
@@ -20,9 +31,10 @@ h2{
 #abas-botoes {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 1200px;
 }
 
 .btn-aba {
@@ -50,48 +62,90 @@ h2{
 
 .conteudo-aba {
     display: none;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(155, 127, 255, 0.3);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.conteudo-aba[hidden] {
+    display: none !important;
+}
+
+.conteudo-aba::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(9, 7, 16, 0.15), rgba(9, 7, 16, 0.5));
+    pointer-events: none;
 }
 
 .conteudo-aba.ativo {
     display: block;
 }
 
+#abas-botoes {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 10px 0;
+    backdrop-filter: blur(8px);
+    background: rgba(8, 10, 18, 0.35);
+}
 
 #caixa1{
-    height: 600px;
-    background-image: url('Img/Descargar Fondo de onda de fluido púrpura abstracto gratis.jpg');
+    min-height: 600px;
+    height: auto;
+    padding: 30px 50px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background-image: linear-gradient(135deg, rgba(15, 10, 33, 0.55), rgba(59, 18, 111, 0.4)), url('Img/Descargar Fondo de onda de fluido púrpura abstracto gratis.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 18px;
     position: relative;
 }
 #link-trabalhos{
     color: white;
 }
 #slogan{
-    position: relative;
-    top: 300px;
+    position: static;
+    margin-top: 24px;
     color: rgb(116, 196, 237);
     border-radius: 5px;
+    font-size: 1.05rem;
 }
 #ola{
-    position: relative;
-    top: 10px;
+    position: static;
+    width: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }  
 #informacoes{
-    width: 400px;
+    width: min(42%, 420px);
+    min-width: 260px;
     border-radius: 5px;
-    position: absolute;
-    left: 50px;
+    position: static;
+    left: auto;
+    flex: 1 1 320px;
 }
 #perfil{
-    width: 400px;
-    position: absolute;
-    right: 100px;
+    width: min(38%, 420px);
+    min-width: 220px;
+    position: static;
+    right: auto;
+    margin-left: auto;
+    flex: 1 1 260px;
+    text-align: center;
 }
 img {
     border-radius: 50%;
@@ -102,8 +156,8 @@ img {
 #caixa2{
     height: 600px;
     background-color: rgb(78, 16, 135);
-    border-radius: 10px;
-    background-image: url(Img/Violet\ Background\ image\ for\ Editing\ _\ Violet\ Background\ _\ Violet\ Wallpaper\ for\ desktop.jpg);
+    border-radius: 18px;
+    background-image: linear-gradient(135deg, rgba(24, 12, 40, 0.7), rgba(111, 63, 196, 0.45)), url(Img/Violet\ Background\ image\ for\ Editing\ _\ Violet\ Background\ _\ Violet\ Wallpaper\ for\ desktop.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -140,11 +194,11 @@ img {
 
 #caixa3{
     height: 600px;
-    background-image:url(Img/Fundo\ roxo\ caixa3.jpg ) ;
+    background-image: linear-gradient(135deg, rgba(19, 11, 39, 0.65), rgba(91, 37, 161, 0.45)), url(Img/Fundo\ roxo\ caixa3.jpg );
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 18px;
     position: relative;
     top: 20px;
 }
@@ -160,6 +214,12 @@ img {
  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #experiencias-escritas{
+  background-color: #ff9a9e; /* Cor de fundo base */
+  background-image: 
+    radial-gradient(at 0% 0%, #840797 0px, transparent 50%),
+    radial-gradient(at 50% 0%, #9708e9 0px, transparent 50%),
+    radial-gradient(at 100% 0%, #9415bb 0px, transparent 50%);
+    
  border-radius: 10px;
  display: flex;
  flex-direction: row;
@@ -167,20 +227,30 @@ img {
  padding: 10px;
  font-size: large;
  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  -webkit-text-stroke-width: 1px; /* Espessura da borda */
+  -webkit-text-stroke-color: rgb(250, 250, 250); /* Cor da borda */
+    text-shadow: 
+    1px 2px 0 #000,  
+     1px 3px 0 #000,
+    1px  1px 0 #000,  
+     3px  1px 0 #000;
  position: relative;
  top: 170px;
- background-color: blueviolet;
+ background-color: rgb(83, 31, 131);
  margin: 10px;
  border-radius: 100px;
- border: 20px solid blueviolet;
+ border: 20px solid rgb(98, 32, 160);
  border: 3px solid black
  }
 
     /* *Caixa 04*/
 #caixa4{
     height: 600px;
-    background-color: rgb(78, 16, 135);
-    border-radius: 10px;
+    background:
+        radial-gradient(circle at top left, rgba(137, 89, 255, 0.45), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(67, 178, 255, 0.2), transparent 25%),
+        linear-gradient(135deg, #0f1020 0%, #1d1232 35%, #170c27 100%);
+    border-radius: 18px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -254,4 +324,163 @@ img {
 .trabalho-item a:hover {
     background-color: rgb(200, 230, 255);
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 12px 40px;
+    }
+
+    #abas-botoes {
+        gap: 8px;
+    }
+
+    .btn-aba {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 120px;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .conteudo-aba {
+        border-radius: 14px;
+    }
+
+    #caixa1,
+    #caixa2,
+    #caixa3,
+    #caixa4 {
+        min-height: 500px;
+        height: auto;
+        padding-bottom: 24px;
+    }
+
+    #caixa1 {
+        padding: 20px 14px 28px;
+        justify-content: center;
+    }
+
+    #ola {
+        top: 0;
+        margin-bottom: 10px;
+    }
+
+    #informacoes {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        min-width: 0;
+    }
+
+    #informacoes h1,
+    #informacoes p,
+    #slogan {
+        text-align: center;
+    }
+
+    #slogan {
+        position: static;
+        top: 0;
+        margin-top: 18px;
+        font-size: 14px;
+    }
+
+    #perfil {
+        position: static;
+        width: 100%;
+        max-width: 260px;
+        margin: 24px auto 0;
+        text-align: center;
+        min-width: 0;
+    }
+
+    #perfil img {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+    }
+
+    #contatos-gerais {
+        top: 20px;
+        padding: 0 16px;
+    }
+
+    #contatos-gerais h3 {
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    #contatos-logo {
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 30px;
+    }
+
+    #contatos-logo img {
+        width: 70px;
+    }
+
+    #experiencias-titulo {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 10px;
+    }
+
+    #experiencias-titulo h2 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    #experiencias-escritas {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        top: 0;
+        margin: 18px 12px 0;
+        padding: 18px 12px;
+        border-radius: 18px;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        font-size: 15px;
+        text-align: center;
+    }
+
+    #trabalhos-titulo {
+        padding: 18px 12px;
+    }
+
+    #trabalhos-conteudo {
+        top: 0;
+        padding: 20px 12px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trabalho-item {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-aba {
+        flex-basis: 100%;
+    }
+
+    #caixa1,
+    #caixa2,
+    #caixa3,
+    #caixa4 {
+        min-height: 420px;
+    }
+
+    #experiencias-titulo h2 {
+        font-size: 20px;
+    }
+
+    #contatos-gerais h3 {
+        font-size: 13px;
+    }
 }
